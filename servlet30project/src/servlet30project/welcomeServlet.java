@@ -9,23 +9,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//servlet3.0·½Ê½ÎŞ·¨Í¨¹ı×¢½â½øĞĞwebÈİÆ÷µÄÅäÖÃ£¬Ö»ÄÜÅäÖÃµ±Ç°servlet£¬ÅäÖÃwebÈİÆ÷ĞèÒªÔÚweb.xmlÖĞÅäÖÃ
-//Ïàµ±ÓÚ2.5ÖĞµÄurlpattern£¬¿ÉÒÔÔÚÕâÀïÉèÖÃ³õÊ¼»¯Ê±»ú£¬µ±Ö»ÓĞurlpatternÊ±¿ÉÒÔÊ¡ÂÔvalue=,Èç¹ûÓĞÆäËû±êÇ©²»ÄÜÊ¡ÂÔ
+//servlet3.0æ–¹å¼æ— æ³•é€šè¿‡æ³¨è§£è¿›è¡Œwebå®¹å™¨çš„é…ç½®ï¼Œåªèƒ½é…ç½®å½“å‰servletï¼Œé…ç½®webå®¹å™¨éœ€è¦åœ¨web.xmlä¸­é…ç½®
+//ç›¸å½“äº2.5ä¸­çš„urlpatternï¼Œå¯ä»¥åœ¨è¿™é‡Œè®¾ç½®åˆå§‹åŒ–æ—¶æœºï¼Œå½“åªæœ‰urlpatternæ—¶å¯ä»¥çœç•¥value=,å¦‚æœæœ‰å…¶ä»–æ ‡ç­¾ä¸èƒ½çœç•¥
+//123
 @WebServlet(value="/welcomeServlet", loadOnStartup=1,initParams= {@WebInitParam(name="servletparaname30",value="servlet30")})
 public class welcomeServlet extends HttpServlet {
 	public void init() {
-		System.out.println("³õÊ¼»¯²âÊÔ");
+		System.out.println("åˆå§‹åŒ–æµ‹è¯•");
 		String value = super.getInitParameter("servletparaname30");
 		System.out.println(value);
-		//ÔÚservlet2.5ÖĞÍ¨¹ı web.xmlÖĞ<load-on-startup>1<load-on-startup>ÉèÖÃ³õÊ¼»¯µÄÊ±»úÎª
-		//Æô¶¯tomcat·şÎñÊ±£¬²¢ÇÒ²»Í¬µÄservletÔÚÆô¶¯Ê±¿ÉÒÔÍ¨¹ı´Ë±êÇ©ÉèÖÃservletµÄ¼ÓÔØË³Ğò
+		//åœ¨servlet2.5ä¸­é€šè¿‡ web.xmlä¸­<load-on-startup>1<load-on-startup>è®¾ç½®åˆå§‹åŒ–çš„æ—¶æœºä¸º
+		//å¯åŠ¨tomcatæœåŠ¡æ—¶ï¼Œå¹¶ä¸”ä¸åŒçš„servletåœ¨å¯åŠ¨æ—¶å¯ä»¥é€šè¿‡æ­¤æ ‡ç­¾è®¾ç½®servletçš„åŠ è½½é¡ºåº
 	}
 	public void destroy() {
-		System.out.println("Ïú»Ù");//ÔÚÏµÍ³»ØÊÕservletÊ±Á¢¼´Ö´ĞĞ
+		System.out.println("é”€æ¯");//åœ¨ç³»ç»Ÿå›æ”¶servletæ—¶ç«‹å³æ‰§è¡Œ
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	System.out.println("serviceµÄ¾ßÌåÊµÏÖ doget dopost");
+	System.out.println("serviceçš„å…·ä½“å®ç° doget dopost");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
